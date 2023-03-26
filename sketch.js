@@ -66,6 +66,7 @@ function createAlphaTable() {
             th.id = "letter-" + th.letter;
             th.className = "letter";
             th.onclick = function (e) {
+                e.preventDefault();
                 var nextBtnNo = 1 + currentNo;
                 document.getElementById("word-box-" + currentNo).value = this.letter;
                 if (nextBtnNo <= 30) {
