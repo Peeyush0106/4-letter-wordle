@@ -267,6 +267,7 @@ function endGame() {
         idNo++;
     }
     document.getElementById("submit-btn").disabled = true;
+    document.getElementById("back-space").disabled = true;
 }
 
 function sleep(milliseconds) {
