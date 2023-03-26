@@ -33,6 +33,7 @@ function createTable() {
             input.rows = 1;
             input.className = "word-box"
             input.maxLength = 1;
+            input.readOnly = true;
             input.style.resize = "none";
             input.onkeypress = function (e) {
                 e.preventDefault();
