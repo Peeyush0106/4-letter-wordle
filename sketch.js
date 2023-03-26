@@ -86,6 +86,7 @@ function createAlphaTable() {
 function backSpace() {
     document.getElementById("word-box-" + currentNo).value = "";
     if (currentNo != (4 * currentRow) - 3) {
+        document.getElementById("word-box-" + currentNo).style.border = "2px solid black";
         currentNo--;
         document.getElementById("word-box-" + currentNo).focus();
     }
