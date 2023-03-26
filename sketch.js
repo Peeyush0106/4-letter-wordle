@@ -84,11 +84,13 @@ function createAlphaTable() {
 }
 
 function backSpace() {
-    document.getElementById("word-box-" + currentNo).value = "";
-    if (currentNo != (4 * currentRow) - 3) {
-        document.getElementById("word-box-" + currentNo).style.border = "2px solid black";
+    if (document.getElementById("word-box-" + currentNo).value === "") {
         currentNo--;
+        document.getElementById("word-box-" + currentNo).value = "";
         document.getElementById("word-box-" + currentNo).focus();
+    }
+    else {
+        document.getElementById("word-box-" + currentNo).value = "";
     }
 }
 
