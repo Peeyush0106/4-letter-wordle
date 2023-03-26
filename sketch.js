@@ -38,7 +38,6 @@ function createTable() {
             input.onkeypress = function (e) {
                 e.preventDefault();
                 var nextBtnNo = 1 + this.number;
-                console.log(e.code, currentNo)
                 if (e.code.slice(0, 3) == "Key") {
                     document.getElementById("word-box-" + currentNo).value = e.key;
                     if (nextBtnNo <= 32 && nextBtnNo !== (currentRow * 4) + 1) {
@@ -69,13 +68,10 @@ function createAlphaTable() {
                 e.preventDefault();
                 var nextBtnNo = 1 + currentNo;
                 document.getElementById("word-box-" + currentNo).value = this.letter;
-                if (nextBtnNo <= 30) {
-                    if (nextBtnNo !== 1 + (5 * currentRow)) {
-                        document.getElementById("word-box-" + nextBtnNo).disabled = false;
-                        currentNo++;
-                    }
+                if (nextBtnNo <= 32 && nextBtnNo !== (currentRow * 4) + 1) {
+                    document.getElementById("word-box-" + nextBtnNo).disabled = false;
+                    currentNo++;
                 }
-                document.getElementById("word-box-" + nextBtnNo).focus();
             }
             document.getElementById("letters-" + (i + 1)).appendChild(th);
         }
