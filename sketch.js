@@ -42,8 +42,11 @@ function createTable() {
                     document.getElementById("word-box-" + currentNo).value = e.key;
                     if (nextBtnNo <= 32 && nextBtnNo !== (currentRow * 4) + 1) {
                         currentNo++;
-                        if (nextBtnNo === 1 + (4 * currentRow)) {
+                        if (nextBtnNo === (4 * currentRow) + 1) {
                             currentRow++;
+                        }
+                        else {
+                            document.getElementById("word-box-" + nextBtnNo).style.border = "4px solid black";
                         }
                     }
                 }
@@ -53,6 +56,7 @@ function createTable() {
             idNo++;
         }
     }
+    document.getElementById("word-box-" + currentNo).style.border = "4px solid black";
 }
 
 function createAlphaTable() {
@@ -70,6 +74,7 @@ function createAlphaTable() {
                 document.getElementById("word-box-" + currentNo).value = this.letter;
                 if (nextBtnNo <= 32 && nextBtnNo !== (currentRow * 4) + 1) {
                     document.getElementById("word-box-" + nextBtnNo).disabled = false;
+                    document.getElementById("word-box-" + nextBtnNo).style.border = "4px solid black";
                     currentNo++;
                 }
             }
@@ -103,6 +108,10 @@ function submitWord(word, no) {
                 giveWordHints(word, no);
                 currentNo++;
                 currentRow++;
+                for (let i = 1; i < currentNo; i++) {
+                    document.getElementById("word-box-" + i).style.border = "2px solid black";
+                }
+                document.getElementById("word-box-" + currentNo).style.border = "4px solid black";
             }
         }
         else {
@@ -264,7 +273,7 @@ function endGame() {
         document.getElementById("word-box-" + idNo).disabled = true;
         idNo++;
     }
-    document.getElementById("submit-btn").disabled = true;
+    document.getElementById("submit-word").disabled = true;
     document.getElementById("back-space").disabled = true;
 }
 
@@ -285,20 +294,29 @@ setInterval(function () {
 }, 10);
 
 window.onload = function () {
-    if (document.body.getElementsByTagName("canvas")[0]) {
-        document.body.getElementsByTagName("canvas")[0].style.width = window.innerWidth + 1000;
-        document.body.getElementsByTagName("canvas")[0].style.height = window.innerHeight;
-    }
+    resizeElements();
+
+    setTimeout(function () {
+        document.getElementById("new-word").style.transition = "0.3s";
+        document.getElementById('new-word').style.boxShadow = '4px 4px 1px 1px gray';
+        document.getElementById('new-word').style.transform = 'scale(1)';
+    }, 200);
+
+    document.getElementById("body").style.opacity = "100%";
 };
 
-window.onresize = function () {
+window.onresize = resizeElements;
+
+function resizeElements() {
     if (document.body.getElementsByTagName("canvas")[0]) {
         document.body.getElementsByTagName("canvas")[0].style.width = window.innerWidth + 1000;
         document.body.getElementsByTagName("canvas")[0].style.height = window.innerHeight;
     }
+
+    document.getElementById("body").style.zoom = window.innerWidth / 1440;
 }
 
-document.getElementById("submit-btn").addEventListener("click", (e) => {
+document.getElementById("submit-word").addEventListener("click", (e) => {
     e.preventDefault();
     submitWord();
 });

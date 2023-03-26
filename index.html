@@ -8,41 +8,52 @@
 </head>
 
 <body>
-    <div id="container" style="border: 5px solid black; border-radius: 20px; display: inline-block; padding: 1%; margin-left: 35%;">
-        <h1 style="font-size: 50px;">
-            Wordle
-        </h1>
-        <div id="inpt-boxes">
-            <table>
-                <thead id="inpt-table-head">
+    <div id="body">
+        <div id="container">
+            <h1 style="font-size: 60px;">
+                Wordle
+            </h1>
+            <div id="inpt-boxes">
+                <table>
+                    <thead id="inpt-table-head">
+                    </thead>
+                </table>
+                <br>
+                <input type="button" id="submit-word" value="Submit Word">
+                <input type="button" id="back-space" value="Backspace" onclick="backSpace()">
+                <button id="new-word" onclick="
+                {
+                    document.getElementById('new-word').style.boxShadow = 'none';
+                    document.getElementById('new-word').style.transform = 'scale(0.6)';
+                    setTimeout(function(){
+                        location.reload();
+                    }, 200);
+                }
+                ">
+                    <img src="reload.jpg" width="30px">
+                    <h4>New Word</h4>
+                </button>
+            </div>
+
+            <table cellspacing="15" cellpadding="5" class="letterTable">
+                <thead>
+                    <tr id="letters-1">
+                    </tr>
                 </thead>
             </table>
-            <br>
-            <input type="button" id="submit-btn" value="Submit Word">
-            <input type="button" id="back-space" value="Backspace" onclick="backSpace()">
-            <input type="button" value="New Word" onclick="location.reload()">
+            <table cellspacing="15" cellpadding="5" class="letterTable">
+                <thead>
+                    <tr id="letters-2">
+                    </tr>
+                </thead>
+            </table>
+            <table cellspacing="15" cellpadding="5" class="letterTable">
+                <thead>
+                    <tr id="letters-3">
+                    </tr>
+                </thead>
+            </table>
         </div>
-        
-        <br>
-
-        <table border="1" cellspacing="15" cellpadding="5" class="letterTable">
-            <thead>
-                <tr id="letters-1">  
-                </tr>
-            </thead>
-        </table>
-        <table border="1" cellspacing="15" cellpadding="5" class="letterTable">
-            <thead>
-                <tr id="letters-2">
-                </tr>
-            </thead>
-        </table>
-        <table border="1" cellspacing="15" cellpadding="5" class="letterTable">
-            <thead>
-                <tr id="letters-3">
-                </tr>
-            </thead>
-        </table>
     </div>
 
     <script src="confetti.js"></script>

@@ -1,7 +1,15 @@
-html {
+html,
+body {
     font-family: comic sans ms;
     zoom: 0.8;
-    background-color: rgb(230, 210, 144);
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+}
+
+#body {
+    opacity: 0;
+    transition: 1s;
 }
 
 canvas {
@@ -13,7 +21,10 @@ canvas {
 
 #container {
     text-align: center;
-    background-color:rgb(115, 173, 218);
+    background-color: rgb(70, 203, 227);
+    border: 5px solid black;
+    border-radius: 20px;
+    display: inline-block;
 }
 
 #container table {
@@ -31,14 +42,60 @@ canvas {
     text-transform: uppercase;
     font-weight: bold;
     caret-color: transparent;
+    border: 2px solid black;
+    border-radius: 4px;
+    font-size: 22px;
+    cursor: pointer;
 }
 
-.letterTable {
-    font-size: 140%;
+.letter {
+    font-size: 160%;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: rgb(159, 248, 158);
 }
 
 .letter:hover {
     transition: 0.1s;
     transform: scale(1.1);
     cursor: pointer;
+}
+
+#new-word {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: antiquewhite;
+    box-shadow: 4px 4px 1px 1px gray;
+    cursor: pointer;
+    border-radius: 5px;
+    transform: scale(0.6);
+}
+
+#new-word:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+#submit-word,
+#back-space {
+    position: fixed;
+    top: 300px;
+    font-size: 20px;
+    background-color: rgb(218, 60, 60);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border: 3px solid black;
+    border-radius: 6px;
+}
+
+#submit-word {
+    right: 10%;
+}
+
+#back-space {
+    left: 10%;
 }
