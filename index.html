@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Word Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="container" style="border: 5px solid black; border-radius: 20px; display: inline-block; padding: 1%; margin-left: 35%;">
+        <h1 style="font-size: 50px;">
+            Wordle
+        </h1>
+        <div id="inpt-boxes">
+            <table>
+                <thead id="inpt-table-head">
+                </thead>
+            </table>
+            <br>
+            <input type="button" id="submit-btn" value="Submit Word">
+            <input type="button" value="Backspace" onclick="backSpace()">
+            <input type="button" value="New Word" onclick="location.reload()">
+        </div>
+        
+        <br>
+
+        <table border="1" cellspacing="15" cellpadding="5" class="letterTable">
+            <thead>
+                <tr id="letters-1">  
+                </tr>
+            </thead>
+        </table>
+        <table border="1" cellspacing="15" cellpadding="5" class="letterTable">
+            <thead>
+                <tr id="letters-2">
+                </tr>
+            </thead>
+        </table>
+        <table border="1" cellspacing="15" cellpadding="5" class="letterTable">
+            <thead>
+                <tr id="letters-3">
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+    <script src="confetti.js"></script>
+    <script src="data.js"></script>
+    <script src="sketch.js"></script>
+</body>
+
+</html>

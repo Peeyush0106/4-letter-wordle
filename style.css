@@ -1,0 +1,44 @@
+html {
+    font-family: comic sans ms;
+    zoom: 0.8;
+    background-color: rgb(230, 210, 144);
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-left: 10%;
+}
+
+#container {
+    text-align: center;
+    background-color:rgb(115, 173, 218);
+}
+
+#container table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#inpt-boxes {
+    zoom: 1.85;
+}
+
+.word-box {
+    text-align: center;
+    vertical-align: middle;
+    text-transform: uppercase;
+    font-weight: bold;
+    caret-color: transparent;
+}
+
+.letterTable {
+    font-size: 140%;
+}
+
+.letter:hover {
+    transition: 0.1s;
+    transform: scale(1.1);
+    cursor: pointer;
+}
